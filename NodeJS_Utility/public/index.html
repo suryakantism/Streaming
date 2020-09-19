@@ -1,0 +1,33 @@
+<html>
+
+<body>
+  <div>
+    <canvas id="canvas1" width="1920" height="1080" style="display: block; width: 40%;"></canvas>
+  </div>
+  <hr>
+  <div>
+    <canvas id="canvas2" width="1920" height="1080" style="display: block; width: 40%;"></canvas>
+  </div>
+
+
+
+</body>
+
+<script type="text/javascript" src="http://localhost:8080/test/jsmpeg.min.js"></script>
+<script type="text/javascript">
+
+
+  player = new JSMpeg.Player('ws://localhost:8080/app1', {
+    canvas: document.getElementById('canvas1'), autoplay: true, audio: false, loop: true
+  })
+
+
+
+
+  player = new JSMpeg.Player('ws://localhost:8080/app2', {
+    canvas: document.getElementById('canvas2'), autoplay: true, audio: false, loop: true
+  })
+
+</script>
+
+</html>
