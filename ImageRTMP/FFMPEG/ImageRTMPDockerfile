@@ -1,0 +1,9 @@
+FROM nginx-custom-hls-image:1.0
+FROM jrottenberg/ffmpeg:3-scratch
+
+EXPOSE 5000
+
+WORKDIR /app
+COPY ./Frames2/ /app/Frames2
+
+ENTRYPOINT nginx; ffmpeg -loop 1 -i image%03d.jpg -c:v libx264 -vf fps=fps=25 -pix_fmt yuv420p -f flv rtmp://0.0.0.0:5000

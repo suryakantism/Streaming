@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  ffplay1:
+    restart: always
+    build:
+      context: "./FFMPEG"
+      dockerfile: ImageRTMPDockerfile
+    image: "ffmpeg_image_rtmp:Janus"
+    ports:
+      - "8081:5000"
